@@ -35,7 +35,10 @@ export default class App extends Component<Props> {
         }
     }, true);
 
-    fetch('http://localhost:3000/todos', {
+    // grab todos from json server
+    // insert your local IP
+    // be sure to set up json server to serve from that address
+    fetch('http://000.000.0.00:3000/todos', {
       method: 'get',
       headers: {
         'Content-Type': 'application/json'
@@ -49,19 +52,35 @@ export default class App extends Component<Props> {
 
   scanAndConnect() {
     this.manager.startDeviceScan(null, null, (error, device) => {
+      console.warn('scanning');
       if (error) {
+        console.warn('error:' + error);
         // Handle error (scanning will be stopped automatically)
         return
       }
 
+
+
       // Check if it is a device you are looking for based on advertisement data
       // or other criteria.
-      if (device.name === 'TI BLE Sensor Tag' || device.name === 'SensorTag') {
-
+      if (device.name === 'vívofit 3') {
+        console.warn('found your vivofit!');
         // Stop scanning as it's not necessary if you are scanning for one device.
         this.manager.stopDeviceScan();
 
         // Proceed with connection.
+
+        for (var prop in device._manager) {
+          console.warn('managerdata: ' + prop);
+        }
+
+        console.warn('manager: ' + device._manager);
+        console.warn('isConnectable: ' + device.isConnectable);
+        console.warn('mtu: ' + device.mtu);
+        console.warn('man. data: ' + device.manufacturerData);
+        console.warn('localname: ' + device.localName);
+        console.warn('rssi: ' + device.rssi);
+        console.warn('servicedata: ' + device.serviceData);
       }
     });
   }
@@ -81,7 +100,9 @@ export default class App extends Component<Props> {
     //this.setState({todos, newTodo: ''});
 
     // option 3: json server
-    fetch('http://localhost:3000/todos', {
+    // insert your local IP
+    // be sure to set up json server to serve from that address
+    fetch('http://000.000.0.00:3000/todos', {
       method: 'POST',
       body: JSON.stringify({
         name: this.state.newTodo

@@ -1,36 +1,20 @@
 {
   "todos": [
     {
-      "name": "Hello",
+      "name": "Creat ReadMe",
       "id": 1
     },
     {
-      "name": "Hiagain",
+      "name": "Clean up Styles",
       "id": 2
     },
     {
-      "name": "Athird",
+      "name": "Check with Polar device",
       "id": 3
     },
     {
-      "name": "Andnow?",
+      "name": "Test with Android emulator",
       "id": 4
-    },
-    {
-      "name": "Oh hiiiii",
-      "id": 5
-    },
-    {
-      "name": "That’s better",
-      "id": 6
-    },
-    {
-      "name": "Oh hi",
-      "id": 7
-    },
-    {
-      "name": "Another test",
-      "id": 8
     }
   ]
 }
