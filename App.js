@@ -121,16 +121,22 @@ export default class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <TextInput
-          style={{height: 40, width: 100, borderColor: 'gray', borderWidth: 1, padding: 10}}
-          value={this.state.newTodo}
-          onChangeText={this.handleChange.bind(this)}
-        />
-        <TouchableHighlight style={styles.box} onPress={this.handlePress.bind(this)}>
-          <Text>Add Todo</Text>
-        </TouchableHighlight>
-        <View>
-          {this.state.todos.map((todo, i) => <Text key={i}>{todo.name}</Text>)}
+        <Text style={styles.headline}>Simple Todo App with Bluetooth Demo</Text>
+        <View style={styles.form}>
+          <TextInput
+            style={styles.input}
+            value={this.state.newTodo}
+            onChangeText={this.handleChange.bind(this)}
+          />
+          <TouchableHighlight style={styles.button} onPress={this.handlePress.bind(this)}>
+            <Text style={styles.btnTxt}>Add Todo</Text>
+          </TouchableHighlight>
+        </View>
+        <View style={styles.list}>
+          {this.state.todos.map((todo, i) =>
+            <View style={styles.listItem} key={i}>
+              <Text style={styles.listItemText}>{todo.name}</Text>
+            </View>)}
         </View>
       </View>
     );
