@@ -1,28 +1,12 @@
 {
   "todos": [
     {
-      "name": "Creat ReadMe",
+      "name": "Test with Android emulator",
       "id": 1
     },
     {
-      "name": "Clean up Styles",
-      "id": 2
-    },
-    {
-      "name": "Check with Polar device",
-      "id": 3
-    },
-    {
-      "name": "Test with Android emulator",
-      "id": 4
-    },
-    {
       "name": "Review cursor height issue",
-      "id": 5
-    },
-    {
-      "name": "Android Test",
-      "id": 6
+      "id": 2
     }
   ]
 }

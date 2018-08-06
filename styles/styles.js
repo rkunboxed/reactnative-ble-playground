@@ -12,7 +12,7 @@ export const styles = StyleSheet.create({
   },
   headline: {
     marginLeft: gutter,
-    marginTop: vunit * 2,
+    marginTop: vunit,
     fontSize: 20,
   },
   form: {
